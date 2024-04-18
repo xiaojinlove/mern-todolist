@@ -1,6 +1,7 @@
 import Create from "./Create"
 import { useEffect, useState } from "react"
 import axios from 'axios'
+import { BsCircleFill, BsFillTrashFill } from 'react-icons/bs'
 
 function Home() {
   const [todos, setTodos] = useState([])
@@ -19,8 +20,14 @@ function Home() {
         <div><h2>没有记录</h2></div>
         :
         todos.map(todo => 
-          <div key={todo._id} >
-            {todo.task}
+          <div key={todo._id} className="task">
+            <div className="checkbox">
+              <BsCircleFill className='icon' />
+              <p>{todo.task}</p>
+            </div>
+            <div>
+              <span><BsFillTrashFill className='icon' /></span>
+            </div>
           </div>
         )
       }
