@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import TodoModel from './models/Todo'
+import TodoModel from './models/Todo.js'
 
 const app = express()
 app.use(cors())
@@ -23,5 +23,5 @@ app.post('/add', (req, res) => {
 })
 
 app.listen(3000, () => {
-  console.log('Server is Running');
+  console.log('Server is Running')
 })
